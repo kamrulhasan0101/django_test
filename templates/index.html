@@ -6,7 +6,8 @@
     <title>Django Todo</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/x-icon" href="https://1card.com.bd/wp-content/uploads/2017/10/card-e1507540279484.png">
+    <link rel="shortcut icon" type="image/x-icon"
+          href="https://1card.com.bd/wp-content/uploads/2017/10/card-e1507540279484.png">
     <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
@@ -30,7 +31,7 @@
             <div class="row">
                 <div class="col-xl-3 col-lg-3">
                     <div class="logo">
-                        <a href="#"><img src="{% static 'img/logo/onecard_logo.png' %}" alt="" /></a>
+                        <a href="#"><img src="{% static 'img/logo/onecard_logo.png' %}" alt=""/></a>
                     </div>
                 </div>
                 <div class="col-xl-9 col-lg-9">
@@ -59,44 +60,31 @@
 
         <div class="row">
 
+            {% for event in events %}
+
             <div class="col-xl-6 col-lg-6 col-md-6">
-                 <div class="events-wrapper text-center mb-60">
-                      <div class="events-img" style="border: 1px solid black;border-radius: 5px">
-                          <a href="ghf">
-                            <img src="{% static 'img/logo/ictcarnival_banner.png' %}" alt="Event Photo" height="250" style="border-radius: 5px"/>
-                          </a>
-                        </div>
-                        <div class="events-meta">
-                            <span>Registration till 12 December 2021</span>
-                        </div>
-                        <div class="events-text">
-                            <h3><a href="ghk">ICT Carnival</a></h3>
-                            <p>Ict Carnival at Diu Campus</p>
-                            <a class="btn" href="ghk">Join Now</a>
-                        </div>
+                <div class="events-wrapper text-center mb-60">
+                    <div class="events-img" style="border: 1px solid black;border-radius: 5px">
+                        <a href="ghf">
+                            <img src="{% static 'img/logo/ictcarnival_banner.png' %}" alt="Event Photo" height="250"
+                                 style="border-radius: 5px"/>
+                        </a>
+                    </div>
+                    <div class="events-meta">
+                        <span>Registration till {{ event.deadline }}</span>
+                    </div>
+                    <div class="events-text">
+                        <h3><a href="ghk">{{ event.title }}</a></h3>
+                        <p>Ict Carnival at Diu Campus</p>
+                        <a class="btn" href="ghk">Join Now</a>
+                    </div>
                 </div>
-        </div>
+            </div>
 
-        <div class="col-xl-6 col-lg-6 col-md-6">
-                 <div class="events-wrapper text-center mb-60">
-                      <div class="events-img" style="border: 1px solid black;border-radius: 5px">
-                          <a href="ghf">
-                            <img src="{% static 'img/logo/ictcarnival_banner.png' %}" alt="Event Photo" height="250" style="border-radius: 5px"/>
-                          </a>
-                        </div>
-                        <div class="events-meta">
-                            <span>Registration till 12 December 2021</span>
-                        </div>
-                        <div class="events-text">
-                            <h3><a href="ghk">ICT Carnival</a></h3>
-                            <p>Ict Carnival at Diu Campus</p>
-                            <a class="btn" href="ghk">Join Now</a>
-                        </div>
-                </div>
-        </div>
+            {% endfor %}
 
+        </div>
     </div>
-</div>
 </div>
 <footer>
     <div class="footer-bottom-area pt-25 pb-25">
@@ -104,7 +92,9 @@
             <div class="row">
                 <div class="col-xl-6 col-lg-6">
                     <div class="copyright">
-                        <p><i class="far fa-copyright"></i> 2021 Daffodil Computers Ltd. All Rights Reserved. Developed By <a href="https://www.linkedin.com/in/kamrulhasan0101" target="_blank">Kamrul Hasan.</a></p>
+                        <p><i class="far fa-copyright"></i> 2021 Daffodil Computers Ltd. All Rights Reserved. Developed
+                            By <a href="https://www.linkedin.com/in/kamrulhasan0101" target="_blank">Kamrul Hasan.</a>
+                        </p>
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-6">
