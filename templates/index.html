@@ -41,6 +41,7 @@
                                 <li><a href="#">HOME </a></li>
                                 <li><a target="_blank" href="https://1card.com.bd/">ABOUT US</a></li>
                                 <li><a href="#">EVENTS</a></li>
+                                <li><a href="#">Register</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -65,7 +66,7 @@
             <div class="col-xl-6 col-lg-6 col-md-6">
                 <div class="events-wrapper text-center mb-60">
                     <div class="events-img" style="border: 1px solid black;border-radius: 5px">
-                        <a href="ghf">
+                        <a href="event-detail-id">
                             <img src="{{ event.img.url }}" alt="Event Photo" height="250"
                                  style="border-radius: 5px"/>
                         </a>
@@ -75,11 +76,11 @@
                     </div>
                     <div class="events-text">
                         {% if event.title == "pic1" %}
-                        <h3><a href="asdfghjkl">extra if condition</a></h3>
+                        <h3><a href="event-detail-id">extra if condition</a></h3>
                         {% endif %}
-                        <h3><a href="ghf">{{ event.title }}</a></h3>
+                        <h3><a href="event-detail-id">{{ event.title }}</a></h3>
                         <p>{{ event.description }}</p>
-                        <a class="btn" href="ghk">Join Now</a>
+                        <a class="btn" href="event-detail-id">Join Now</a>
                     </div>
                 </div>
             </div>
