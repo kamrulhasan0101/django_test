@@ -17,15 +17,15 @@ def register(request):
         if password == con_password:
             if User.objects.filter(email=email).exists():
                 messages.info(request, "Email already exists !")
-                redirect('register')
+                return redirect('accounts:register')
             else:
                 user = User.objects.create_user(username=username, first_name=firstname, last_name=lastname, email=email, password=password)
                 user.save()
-                messages.info(request, "New User Created")
-            return redirect('register')
+                messages.info(request, "Registration Successful. Please login ")
+                return redirect('accounts:login')
         else:
             messages.info(request, "Password does not match")
-            return redirect('register')
+            return redirect('accounts:register')
     else:
         return render(request, 'register.html')
 
@@ -42,6 +42,6 @@ def login(request):
         else:
             print("User not authenticated")
             messages.info(request, "Password does not match")
-            return redirect('login')
+            return redirect('accounts:login')
     else:
         return render(request, 'login.html')
