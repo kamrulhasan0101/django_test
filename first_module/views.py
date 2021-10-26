@@ -9,7 +9,10 @@ def home(request):
 
 
 def add(request):
-    val1 = int(request.POST['num1'])
-    val2 = int(request.POST['num2'])
-    result = val1 + val2
-    return render(request, 'result.html', {'result': result})
+    if request == 'POST':
+        val1 = int(request.POST['num1'])
+        val2 = int(request.POST['num2'])
+        result = val1 + val2
+        return render(request, 'result.html', {'result': result})
+    else:
+        return render(request, 'home.html')
