@@ -41,8 +41,12 @@
                                 <li><a href="#">HOME </a></li>
                                 <li><a target="_blank" href="https://1card.com.bd/">ABOUT US</a></li>
                                 <li><a href="#">EVENTS</a></li>
+                                {% if user.is_authenticated %}
+                                <li><a href="{% url 'accounts:logout' %}">logout</a></li>
+                                {% else %}
                                 <li><a href="{% url 'accounts:register' %}">Register</a></li>
                                 <li><a href="{% url 'accounts:login' %}">login</a></li>
+                                {% endif %}
                             </ul>
                         </nav>
                     </div>
